@@ -42,7 +42,7 @@ func (s *Snowflake) GenerateID() int64 {
 	if currentTime == s.lastTime {
 		s.sequenceNum = (s.sequenceNum + 1) & maxSequenceNum
 		if s.sequenceNum == 0 {
-			currentTime = s.waitNextMillis()
+			currentTime = s.waitNextMillis(currentTime)
 		}
 	} else {
 		s.sequenceNum = 0
@@ -58,8 +58,7 @@ func (s *Snowflake) GenerateID() int64 {
 }
 
 // waitNextMillis waits until the next millisecond.
-func (s *Snowflake) waitNextMillis() int64 {
-	currentTime := time.Now().UnixNano() / 1e6
+func (s *Snowflake) waitNextMillis(currentTime int64) int64 {
 	for currentTime <= s.lastTime {
 		currentTime = time.Now().UnixNano() / 1e6
 	}
