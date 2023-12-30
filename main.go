@@ -65,6 +65,6 @@ func (s *Snowflake) waitNextMillis(currentTime int64) int64 {
 	return currentTime
 }
 
-func (s *Snowflake) currentVersion() string {
-	return "1.0.0"
+func (s *Snowflake) Version() string {
+	return "1.0.1"
 }
