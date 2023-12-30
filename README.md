@@ -16,28 +16,28 @@ To use the Snowflake ID Generator in your Go application, follow these steps:
 
 1. Import the package:
 
-   ```go
-   import (
-   	"fmt"
-   	"github.com/naruepanart/snowflakeid"
-   )
-   ```
+```go
+import (
+	"fmt"
+	"github.com/naruepanart/snowflakeid"
+)
+```
 
 2. Create a Snowflake instance with a unique machine ID:
 
-   ```go
-   machineID := 1 // Set the machine ID according to the actual scenario
-   sf := snowflakeid.NewSnowflake(int64(machineID))
-   ```
+```go
+machineID := 1 // Set the machine ID according to the actual scenario
+sf := snowflakeid.NewSnowflake(int64(machineID))
+```
 
 3. Generate unique IDs using the `GenerateID` method:
 
-   ```go
-   for i := 0; i < 10; i++ {
-       id := sf.GenerateID()
-       fmt.Println(id)
-   }
-   ```
+```go
+for i := 0; i < 10; i++ {
+    id := sf.GenerateID()
+    fmt.Println(id)
+}
+```
 
 ## Example
 
