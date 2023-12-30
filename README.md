@@ -2,14 +2,6 @@
 
 The Snowflake ID Generator is a Go package that allows you to generate unique and distributed IDs based on a combination of timestamp, machine ID, and sequence number.
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Example](#example)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Installation
 
 To use the Snowflake ID Generator in your Go project, you can simply install it using the `go get` command:
@@ -69,6 +61,7 @@ func main() {
 		fmt.Println(id)
 	}
 }
+```
 
 Adjust the machine ID based on your deployment environment.
 
